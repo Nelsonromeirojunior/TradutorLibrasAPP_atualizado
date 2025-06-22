@@ -5,49 +5,45 @@
     <meta charset="UTF-8" />
     <title>Tradutor Libras + Voz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./CSS/style.css" />
     <link rel="icon" type="image/png" href="./Imagem/libras-logo.png" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./CSS/style.css">
 </head>
 
 <body class="p-3">
 
     <div class="text-center mb-4">
         <h1>Tradutor Libras + Voz</h1>
-        <button id="botaoFalar" class="btn btn-primary me-2">🎙️ Falar</button>
+        <button id="botaoIniciar" class="btn btn-primary me-2">🎙️ Iniciar Escuta</button>
         <button id="botaoVoz" class="btn btn-success me-2">🔊 Ouvir texto</button>
         <button id="toggleTema" class="btn btn-warning">🌞/🌜 Tema</button>
     </div>
 
     <p class="text-center text-primary mb-2">
-        Meu nome é Nelson Romeiro Junior, sou PCD (Deficiente Auditivo), Formado em Análise e Desenvolvimento de
-        Sistemas (ADS) e Pós-Graduado em Engenharia de Software.
+        Esta página escuta continuamente a conversa e exibe o texto aqui automaticamente.
     </p>
-    <p class="text-center text-primary mb-4">
-        Este tradutor usa Libras e Voz. Fale com o microfone ou digite o texto e ouça a tradução em português. Clique em
-        "Falar" para capturar a voz, ou em "Ouvir texto" para sintetizar o que foi digitado.
-    </p>
+
+    <div id="textoCapturado" class="mb-3">...</div>
 
     <div class="mb-3">
         <textarea id="inputTexto" class="form-control" rows="3" placeholder="Digite o texto para ouvir..."></textarea>
     </div>
 
-    <div id="textoCapturado" class="mb-3"></div>
-
     <footer class="container_4 text-center mt-4">
         <p>© Desenvolvedor Front-End - Nelson Romeiro Junior - Dev Libras no Junior 👨🏻‍💻💻</p>
     </footer>
 
+    <!-- VLibras -->
     <div vw class="enabled fixed bottom-0 end-0 p-3">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
             <div class="vw-plugin-top-wrapper"></div>
         </div>
     </div>
-
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+
     <script src="./script.js"></script>
 </body>
 

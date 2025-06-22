@@ -1,53 +1,56 @@
 body {
   background-color: #f8f9fa;
   color: #212529;
+  font-family: Inter, Arial, sans-serif;
   transition: background 0.3s, color 0.3s;
+  padding: 1rem;
 }
 body.dark-mode {
   background-color: #212529;
   color: #f8f9fa;
 }
+h1 {
+  font-size: 1.8rem;
+  margin-block-end: 1rem;
+}
 p {
   text-align: center;
   font-size: 1rem;
   color: #007bff;
+  margin: 0.5rem 0;
 }
-
-textarea,
-#textoCapturado {
-  color: inherit;
-  background: inherit;
+button {
+  min-inline-size: 110px;
+  margin: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
 }
 #textoCapturado {
-  min-block-size: 100px;
+  min-block-size: 120px;
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
+  background: inherit;
+  color: inherit;
+  margin-block-end: 1rem;
 }
 body.dark-mode #textoCapturado {
   border-color: #444;
 }
 footer {
-  text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
   color: #6c757d;
+  text-align: center;
 }
 body.dark-mode footer {
   color: #adb5bd;
 }
-.dark-mode-toggle {
-  position: fixed;
-  inset-block-start: 1rem;
-  inset-inline-end: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  color: #212529;
-}
-/* Responsividade para tablets e celulares */
+/* ========= RESPONSIVIDADE ========== */
 @media (max-width: 991.98px) {
+  h1 {
+    font-size: 1.6rem;
+  }
   p {
     font-size: 0.95rem;
     padding-inline: 1rem;
@@ -55,30 +58,59 @@ body.dark-mode footer {
   #textoCapturado {
     font-size: 1rem;
     padding: 0.75rem;
-    min-block-size: 80px;
+    min-block-size: 100px;
   }
-  .dark-mode-toggle {
-    font-size: 1.3rem;
-    inset-block-start: 0.5rem;
-    inset-inline-end: 0.5rem;
+  button {
+    font-size: 0.9rem;
+    min-inline-size: auto;
+    padding: 0.4rem 0.8rem;
   }
 }
 
 @media (max-width: 575.98px) {
+  h1 {
+    font-size: 1.4rem;
+  }
   p {
     font-size: 0.9rem;
     padding-inline: 0.5rem;
   }
   #textoCapturado {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     padding: 0.5rem;
-    min-block-size: 60px;
+    min-block-size: 80px;
+  }
+  button {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
   }
   footer {
     font-size: 0.8rem;
     padding: 0.5rem;
   }
-  .dark-mode-toggle {
-    font-size: 1.1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #212529;
+    color: #f8f9fa;
+  }
+  body #textoCapturado {
+    border-color: #444;
+  }
+  body footer {
+    color: #adb5bd;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #f8f9fa;
+    color: #212529;
+  }
+  body #textoCapturado {
+    border-color: #ccc;
+  }
+  body footer {
+    color: #6c757d;
   }
 }
